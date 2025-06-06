@@ -61,10 +61,12 @@ jobs:
     if: always()
 
     steps:
-      - name: notify to slack
-        uses: 8398a7/action-slack@v3
+      - name: Job status
+        run: echo "${{ job.status }}"
+      #- name: notify to slack
+      #  uses: 8398a7/action-slack@v3
         #env:
           #SLACK_WEBHOOK_URL: ${{ secrets.SLACK }}
-        with:
-          status: ${{ job.status }}
-          fields: repo,commit,author,job,took
+        #with:
+          #status: ${{ job.status }}
+          #fields: repo,commit,author,job,took

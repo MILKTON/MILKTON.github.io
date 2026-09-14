@@ -1,761 +1,1152 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luis Eugenio Caballero Nava — Guionista &amp; Narrador</title>
-<meta name="description" content="Portafolio de Luis Eugenio Caballero Nava: guionista, copywriter creativo y narrador de ficción breve, Ciudad de México.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
-
-  <style>
-  :root{
-    --ink: #15120E;
-    --ink-2: #1C1811;
-    --ink-3: #221D15;
-    --paper: #E7E1CE;
-    --paper-2: #DCD4BC;
-    --ribbon: #8B2A22;
-    --ribbon-soft: #A8483E;
-    --brass: #A98F5E;
-    --on-dark: #EFE8D8;
-    --on-dark-muted: #96907E;
-    --on-paper: #221D15;
-    --on-paper-muted: #5C5646;
-    --rule-dark: #3A342A;
-    --rule-paper: #C7BE9F;
-    --serif: 'Newsreader', Georgia, serif;
-    --mono: 'Courier Prime', 'Courier New', monospace;
-  }
-
-  *{ box-sizing: border-box; }
-  html{ scroll-behavior: smooth; }
-  body{
-    margin:0;
-    background: var(--ink);
-    color: var(--on-dark);
-    font-family: var(--serif);
-    -webkit-font-smoothing: antialiased;
-  }
-  img{ max-width:100%; display:block; }
-  a{ color: inherit; }
-  .container{
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 0 clamp(20px, 5vw, 56px);
-  }
-  h1,h2,h3{ margin:0; font-weight: 500; }
-  p{ margin:0; }
-
-  a.button{
-    display:inline-block;
-    font-family: var(--mono);
-    font-size: 0.9rem;
-    text-decoration:none;
-    padding: 0.85em 1.4em;
-    border: 1px solid currentColor;
-    transition: background-color .15s ease, color .15s ease;
-  }
-  .on-dark-btn{ color: var(--on-dark); }
-  .on-dark-btn:hover{ background: var(--on-dark); color: var(--ink); }
-  .on-dark-btn.filled{ background: var(--ribbon); border-color: var(--ribbon); color: var(--on-dark); }
-  .on-dark-btn.filled:hover{ background: var(--ribbon-soft); }
-
-  a:focus-visible, button:focus-visible{
-    outline: 2px solid var(--ribbon-soft);
-    outline-offset: 3px;
-  }
-
-  /* ---------- HERO ---------- */
-  .hero{
-    position: relative;
-    min-height: 92vh;
-    display:flex;
-    align-items:center;
-    background:
-      repeating-linear-gradient(
-        to bottom,
-        rgba(239,232,216,0.028) 0px,
-        rgba(239,232,216,0.028) 1px,
-        transparent 1px,
-        transparent 34px
-      ),
-      var(--ink);
-    overflow:hidden;
-  }
-  .hero::after{
-    content:"";
-    position:absolute; inset:0;
-    background: radial-gradient(ellipse at 20% 20%, rgba(139,42,34,0.10), transparent 55%);
-    pointer-events:none;
-  }
-  .hero-inner{ position:relative; padding-top: 64px; padding-bottom: 64px; }
-  .slugline{
-    font-family: var(--mono);
-    color: var(--brass);
-    letter-spacing: 0.06em;
-    font-size: 0.95rem;
-    margin-bottom: 1.6em;
-  }
-  .name{
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: clamp(2.6rem, 8vw, 5.4rem);
-    line-height: 1.02;
-    letter-spacing: -0.01em;
-    color: var(--on-dark);
-  }
-  .name em{ font-style: italic; font-weight: 300; color: var(--on-dark-muted); }
-  .role{
-    font-family: var(--mono);
-    font-size: clamp(0.8rem, 1.6vw, 0.98rem);
-    color: var(--on-dark-muted);
-    margin-top: 1.1em;
-  }
-  .thesis{
-    font-family: var(--serif);
-    font-style: italic;
-    font-weight: 400;
-    font-size: clamp(1.25rem, 2.6vw, 1.7rem);
-    max-width: 20ch;
-    margin-top: 0.9em;
-    color: var(--on-dark);
-    min-height: 1.4em;
-  }
-  .cursor{
-    display:inline-block;
-    width: 0.5ch;
-    background: var(--ribbon-soft);
-    margin-left: 2px;
-    animation: blink 1s step-end infinite;
-  }
-  @keyframes blink{ 50%{ opacity:0; } }
-
-  .hero-meta{
-    display:flex;
-    gap: 1.6em;
-    flex-wrap: wrap;
-    margin-top: 2.6em;
-    align-items:center;
-  }
-  .hero-location{
-    font-family: var(--mono);
-    font-size: 0.85rem;
-    color: var(--on-dark-muted);
-  }
-
-  /* ---------- SECTION HEADINGS ---------- */
-  .section-head{
-    font-family: var(--serif);
-    font-weight: 500;
-    font-size: clamp(1.7rem, 3.4vw, 2.4rem);
-    margin-bottom: 0.5em;
-  }
-  .section-intro{
-    max-width: 58ch;
-    font-size: 1.05rem;
-    line-height: 1.6;
-  }
-  .on-paper .section-intro{ color: var(--on-paper-muted); }
-  .on-dark-section .section-intro{ color: var(--on-dark-muted); }
-
-  /* ---------- TURNO COMERCIAL (paper) ---------- */
-  .turno-comercial{
-    background: var(--paper);
-    color: var(--on-paper);
-    padding: clamp(56px, 9vw, 108px) 0;
-  }
-  .engagements{
-    margin-top: 3em;
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2.6em;
-  }
-  .engagement{
-    border-top: 1px solid var(--rule-paper);
-    padding-top: 1.1em;
-  }
-  .engagement .years{
-    font-family: var(--mono);
-    font-size: 0.82rem;
-    color: var(--brass);
-  }
-  .engagement h3{
-    font-family: var(--serif);
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-top: 0.35em;
-  }
-  .engagement .org{
-    font-family: var(--mono);
-    font-size: 0.85rem;
-    color: var(--on-paper-muted);
-    margin-top: 0.2em;
-  }
-  .engagement p.desc{
-    margin-top: 0.8em;
-    font-size: 0.98rem;
-    line-height: 1.55;
-    color: var(--on-paper);
-    max-width: 42ch;
-  }
-
-  /* ---------- TURNO NOCTURNO (dark) ---------- */
-  .turno-nocturno{
-    background: var(--ink-2);
-    color: var(--on-dark);
-    padding: clamp(56px, 9vw, 108px) 0;
-    border-top: 1px solid var(--ribbon);
-  }
-  .stories{
-    margin-top: 3em;
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2px;
-    background: var(--rule-dark);
-  }
-  .story{
-    background: var(--ink-2);
-    padding: 2.2em;
-  }
-  .story .years{
-    font-family: var(--mono);
-    font-size: 0.82rem;
-    color: var(--ribbon-soft);
-  }
-  .story h3{
-    font-family: var(--serif);
-    font-style: italic;
-    font-size: 1.65rem;
-    font-weight: 500;
-    margin-top: 0.3em;
-  }
-  .story p.desc{
-    margin-top: 0.9em;
-    font-size: 1rem;
-    line-height: 1.65;
-    color: var(--on-dark-muted);
-    max-width: 48ch;
-  }
-  .story a.read{
-    display:inline-block;
-    margin-top: 1.3em;
-    font-family: var(--mono);
-    font-size: 0.85rem;
-    text-decoration: underline;
-    text-decoration-color: var(--ribbon);
-    text-underline-offset: 4px;
-    color: var(--on-dark);
-  }
-
-  .reception{
-    margin-top: 3em;
-    display:flex;
-    gap: 1.6em;
-    align-items:center;
-    flex-wrap: wrap;
-  }
-  .reception img{
-    width: 76px; height: 76px;
-    object-fit: cover;
-    border-radius: 50%;
-    filter: grayscale(0.35) sepia(0.12);
-    border: 1px solid var(--rule-dark);
-  }
-  .reception p{
-    font-size: 0.98rem;
-    color: var(--on-dark-muted);
-    max-width: 46ch;
-    line-height: 1.55;
-  }
-
-  /* ---------- TRAYECTORIA ---------- */
-  .trayectoria{
-    background: var(--paper);
-    color: var(--on-paper);
-    padding: clamp(56px, 9vw, 108px) 0;
-  }
-  .timeline{
-    margin-top: 3em;
-    border-left: 1px solid var(--rule-paper);
-    padding-left: clamp(20px, 4vw, 40px);
-    display:flex;
-    flex-direction: column;
-    gap: 1.9em;
-  }
-  .tl-item{ position:relative; }
-  .tl-item::before{
-    content:"";
-    position:absolute;
-    left: calc(-1 * clamp(20px, 4vw, 40px) - 4px);
-    top: 0.45em;
-    width: 7px; height: 7px;
-    background: var(--ribbon);
-    border-radius: 50%;
-  }
-  .tl-item .years{
-    font-family: var(--mono);
-    font-size: 0.82rem;
-    color: var(--brass);
-  }
-  .tl-item h3{
-    font-family: var(--serif);
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-top: 0.25em;
-  }
-  .tl-item .org{
-    font-family: var(--mono);
-    font-size: 0.82rem;
-    color: var(--on-paper-muted);
-  }
-  .tl-item p.desc{
-    margin-top: 0.5em;
-    font-size: 0.95rem;
-    line-height: 1.55;
-    max-width: 56ch;
-    color: var(--on-paper);
-  }
-
-  /* ---------- PROYECTOS: ANAQUEL ---------- */
-  .proyectos{
-    background: var(--ink);
-    padding: clamp(56px, 9vw, 108px) 0;
-  }
-  .proyectos .section-head, .proyectos .section-intro{ color: var(--on-dark); }
-
-  .shelf{ margin-top: 3.4em; }
-  .shelf-row{
-    display:flex;
-    align-items:flex-end;
-    gap: 10px;
-  }
-  .spine{
-    font-family: var(--mono);
-    font-size: 0.82rem;
-    letter-spacing: 0.02em;
-    border: none;
-    cursor: pointer;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    padding: 1.4em 0.6em;
-    height: clamp(170px, 24vw, 230px);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    transform: translateY(0);
-    transition: transform .18s ease, box-shadow .18s ease;
-    box-shadow: -2px 0 0 rgba(0,0,0,0.18) inset;
-  }
-  .spine:hover{ transform: translateY(-8px); }
-  .spine[aria-selected="true"]{
-    transform: translateY(-20px);
-    box-shadow: 0 10px 18px rgba(0,0,0,0.35);
-  }
-  .spine:focus-visible{
-    outline: 2px solid var(--on-dark);
-    outline-offset: 3px;
-  }
-  .spine-a{ background: var(--brass); color: var(--on-paper); flex: 1.1; }
-  .spine-b{ background: var(--paper-2); color: var(--on-paper); flex: 0.9; }
-  .spine-c{ background: var(--ribbon); color: var(--on-dark); flex: 1; }
-  .spine-d{ background: var(--ink-3); color: var(--on-dark); flex: 0.85; border-right: 1px solid var(--brass); }
-
-  .shelf-ledge{
-    height: 14px;
-    background: linear-gradient(to bottom, var(--brass), #7C6841);
-    box-shadow: 0 8px 14px rgba(0,0,0,0.45);
-  }
-
-  .panel{ padding-top: 2.6em; max-width: 60ch; min-height: 9em; }
-  .panel .meta{
-    font-family: var(--mono);
-    font-size: 0.78rem;
-    color: var(--on-dark-muted);
-  }
-  .panel h3{
-    font-family: var(--serif);
-    font-size: clamp(1.4rem, 3vw, 1.9rem);
-    font-weight: 500;
-    margin-top: 0.4em;
-    color: var(--on-dark);
-  }
-  .panel .desc{
-    margin-top: 0.7em;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: var(--on-dark-muted);
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    .spine, .spine:hover, .spine[aria-selected="true"]{ transition: none; }
-  }
-
-  .eyebrow{
-    font-family: var(--mono);
-    font-size: 0.85rem;
-    color: var(--brass);
-    letter-spacing: 0.04em;
-    margin-bottom: 0.5em;
-  }
-
-  /* ---------- DOMINIO ---------- */
-  .dominio{
-    background: var(--paper);
-    color: var(--on-paper);
-    padding: clamp(56px, 9vw, 108px) 0;
-  }
-  .skills-grid{
-    margin-top: 3em;
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 2.8em;
-  }
-  .skill-label{
-    font-family: var(--mono);
-    font-size: 0.82rem;
-    letter-spacing: 0.04em;
-    color: var(--brass);
-  }
-  .skill-tags{
-    margin-top: 1em;
-    display:flex;
-    flex-wrap: wrap;
-    gap: 0.55em;
-  }
-  .tag{
-    font-family: var(--mono);
-    font-size: 0.82rem;
-    border: 1px solid var(--rule-paper);
-    padding: 0.5em 0.8em;
-    color: var(--on-paper);
-    line-height: 1.2;
-  }
-  .tag:hover{ border-color: var(--ribbon); color: var(--ribbon); }
-
-  /* ---------- FOOTER ---------- */
-  footer{
-    background: var(--ink);
-    border-top: 1px solid var(--ribbon);
-    padding: clamp(48px, 8vw, 88px) 0 40px;
-  }
-  footer h2{
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: clamp(1.8rem, 4vw, 2.7rem);
-    max-width: 14ch;
-  }
-  .footer-actions{
-    margin-top: 1.8em;
-    display:flex;
-    gap: 1em;
-    flex-wrap: wrap;
-  }
-  .footer-bottom{
-    margin-top: 4em;
-    display:flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1em;
-    font-family: var(--mono);
-    font-size: 0.8rem;
-    color: var(--on-dark-muted);
-    border-top: 1px solid var(--rule-dark);
-    padding-top: 1.6em;
-  }
-
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior: auto; }
-    .cursor{ animation: none; }
-  }
-</style>
-</head>
-<body>
-
-<header class="hero">
-  <div class="container hero-inner">
-    <p class="slugline">FADE IN:</p>
-    <h1 class="name">Luis Eugenio<br><em>Caballero Nava</em></h1>
-    <p class="role">Guionista · Copywriter Creativo Sr. · Diseñador Narrativo</p>
-    <p class="thesis" id="thesis"></p>
-    <div class="hero-meta">
-      <a class="button on-dark-btn filled" href="#proyectos">Ver proyectos</a>
-      <a class="button on-dark-btn" href="https://mx.linkedin.com/in/luis-eugenio-caballero-nava-1a6022202" target="_blank" rel="noopener">LinkedIn</a>
-    </div>
-    <p class="hero-location" style="margin-top:2em;">Ciudad de México, México</p>
-  </div>
-</header>
-
-<section class="turno-comercial on-paper" id="comercial">
-  <div class="container">
-    <h2 class="section-head">Turno comercial</h2>
-    <p class="section-intro">Guiones y narrativas de marca para audiencias masivas: campañas, contenido para redes y materiales de capacitación para compañías grandes.</p>
-    <div class="engagements">
-      <div class="engagement">
-        <p class="years">2025 — actualidad</p>
-        <h3>Copywriter Creativo</h3>
-        <p class="org">Devórame Otra Vez</p>
-        <p class="desc">Conceptualiza campañas y guiones comerciales e institucionales para Nestlé, Elanco y Grupo Presidente, adaptando tono y estructura narrativa a Instagram, TikTok, Facebook y Amazon USA.</p>
-      </div>
-      <div class="engagement">
-        <p class="years">2017 — 2022</p>
-        <h3>Guionista</h3>
-        <p class="org">Analysales</p>
-        <p class="desc">Guiones de comunicación interna y capacitación para Scotiabank, Palacio de Hierro, Office Max, Easy Fit y Bendita Paleta.</p>
-      </div>
-      <div class="engagement">
-        <p class="years">2024</p>
-        <h3>Narrativa interactiva</h3>
-        <p class="org">Certificación en Desarrollo de Videojuegos, Universidad Anáhuac</p>
-        <p class="desc">Una extensión reciente hacia el diseño narrativo para medios interactivos.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="turno-nocturno on-dark-section" id="nocturno">
-  <div class="container">
-    <h2 class="section-head">Turno nocturno</h2>
-    <p class="section-intro">Como narrador, escribe ficción breve para Letras Insomnes. Su prosa husmea en la violencia doméstica, el rencor heredado y esa clase de belleza que solo aparece cuando algo se rompe.</p>
-    <div class="stories">
-      <article class="story">
-        <p class="years">2025</p>
-        <h3>Heredar el fuego</h3>
-        <p class="desc">Un nieto hereda las tierras de su abuela, una matriarca tan generosa como cruel, mientras el resto de la familia se devora entre sí por lo que queda. Un relato sobre la herencia como condena.</p>
-        <a class="read" href="https://letrasinsomnes.com/heredar-el-fuego/" target="_blank" rel="noopener">Leer el cuento</a>
-      </article>
-      <article class="story">
-        <p class="years">2026</p>
-        <h3>La visita mensual</h3>
-        <p class="desc">Un hombre próspero paga un precio que no esperaba por un ritual pedido para proteger su negocio. Un cuento sobre la culpa convertida en costumbre.</p>
-        <a class="read" href="https://letrasinsomnes.com/la-visita-mensual/" target="_blank" rel="noopener">Leer el cuento</a>
-      </article>
-    </div>
-    <div class="reception">
-      <img src="https://letrasinsomnes.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-15-at-4.16.02-PM.jpeg" alt="Luis Eugenio Caballero Nava" loading="lazy">
-      <p>Lectores de Letras Insomnes han comparado la crudeza de su narrativa con la de Juan Rulfo. Actualmente prepara su primera antología de cuentos.</p>
-    </div>
-  </div>
-</section>
-
-<section class="trayectoria on-paper" id="trayectoria">
-  <div class="container">
-    <h2 class="section-head">Trayectoria</h2>
-    <p class="section-intro">Quince años entre set, oficina y escritorio nocturno.</p>
-    <div class="timeline">
-      <div class="tl-item">
-        <p class="years">2010</p>
-        <h3>Asistente de investigación histórica y fotográfica</h3>
-        <p class="org">Casa de la Cultura de San Luis Potosí</p>
-        <p class="desc">Investigación para la exposición y el libro sobre el fotógrafo Manuel Ramos.</p>
-      </div>
-      <div class="tl-item">
-        <p class="years">2012</p>
-        <h3>Coguionista, serie «Hotel Garage»</h3>
-        <p class="org">Lucía Films</p>
-        <p class="desc">Guiones en coautoría con Michael Rowe, ganador de la Cámara de Oro en Cannes 2010.</p>
-      </div>
-      <div class="tl-item">
-        <p class="years">2015</p>
-        <h3>Guionista de dos largometrajes</h3>
-        <p class="org">BluePrint, bajo la dirección de Julio Geiger</p>
-      </div>
-      <div class="tl-item">
-        <p class="years">2015 — 2016</p>
-        <h3>Servicio social</h3>
-        <p class="org">Canal Once</p>
-        <p class="desc">Investigación cultural y guion de introducciones para el programa Cine del Once.</p>
-      </div>
-      <div class="tl-item">
-        <p class="years">2016</p>
-        <h3>Guion del cortometraje «Colector 13»</h3>
-        <p class="org">Dir. Fabián Quintanar</p>
-        <p class="desc">Ganador del Premio del Público en la categoría Reto Doctubre.</p>
-      </div>
-      <div class="tl-item">
-        <p class="years">2017 — 2022</p>
-        <h3>Guionista</h3>
-        <p class="org">Analysales</p>
-      </div>
-      <div class="tl-item">
-        <p class="years">2022 — 2025</p>
-        <h3>Compliance Officer / Team Leader</h3>
-        <p class="org">The Mendoza Law Firm</p>
-        <p class="desc">Redacción técnica y normativa.</p>
-      </div>
-      <div class="tl-item">
-        <p class="years">2025 — hoy</p>
-        <h3>Copywriter Creativo</h3>
-        <p class="org">Devórame Otra Vez</p>
-      </div>
-      <div class="tl-item">
-        <p class="years">2025 — hoy</p>
-        <h3>Narrador</h3>
-        <p class="org">Letras Insomnes</p>
-        <p class="desc">Prepara su primera antología de cuentos.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="proyectos" id="proyectos">
-  <div class="container">
-    <h2 class="section-head">Proyectos destacados</h2>
-    <p class="section-intro">Cuatro historias, cuatro formatos. Saca una del anaquel.</p>
-
-    <div class="shelf">
-      <div class="shelf-row" role="tablist" aria-label="Proyectos destacados">
-        <button type="button" class="spine spine-a" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true">Hotel Garage</button>
-        <button type="button" class="spine spine-b" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">Colector 13</button>
-        <button type="button" class="spine spine-c" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">Heredar el fuego</button>
-        <button type="button" class="spine spine-d" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" tabindex="-1">La visita mensual</button>
-      </div>
-      <div class="shelf-ledge" aria-hidden="true"></div>
-
-      <div class="panel" id="panel-1" role="tabpanel" aria-labelledby="tab-1">
-        <p class="meta">2012 · Serie de TV · Coguion</p>
-        <h3>Hotel Garage</h3>
-        <p class="desc">Escrito junto a Michael Rowe, ganador de la Cámara de Oro en Cannes 2010, para Lucía Films.</p>
-      </div>
-      <div class="panel" id="panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
-        <p class="meta">2016 · Cortometraje · Guion</p>
-        <h3>Colector 13</h3>
-        <p class="desc">Dirigido por Fabián Quintanar. Ganador del Premio del Público, Reto Doctubre.</p>
-      </div>
-      <div class="panel" id="panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
-        <p class="meta">2025 · Cuento · Letras Insomnes</p>
-        <h3>Heredar el fuego</h3>
-        <p class="desc">Una familia, una hacienda y una herencia que nadie quiere cargar sola.</p>
-      </div>
-      <div class="panel" id="panel-4" role="tabpanel" aria-labelledby="tab-4" hidden>
-        <p class="meta">2026 · Cuento · Letras Insomnes</p>
-        <h3>La visita mensual</h3>
-        <p class="desc">Un ritual, un cliente y una culpa que se aprende a administrar.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="dominio on-paper" id="dominio">
-  <div class="container">
-    <p class="eyebrow">Habilidades</p>
-    <h2 class="section-head">Lo que domino</h2>
-    <p class="section-intro">Herramientas y disciplinas detrás de cada guion.</p>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <p class="skill-label">CREATIVIDAD</p>
-        <div class="skill-tags">
-          <span class="tag">Copywriting publicitario</span>
-          <span class="tag">Guionismo comercial</span>
-          <span class="tag">Facilitación de brainstorming</span>
-          <span class="tag">Conceptualización de campañas</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <p class="skill-label">ESCRITURA</p>
-        <div class="skill-tags">
-          <span class="tag">Ficción breve</span>
-          <span class="tag">Redacción técnica</span>
-          <span class="tag">Comunicación corporativa</span>
-          <span class="tag">Adaptación de tono de voz</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <p class="skill-label">HERRAMIENTAS</p>
-        <div class="skill-tags">
-          <span class="tag">Celtx</span>
-          <span class="tag">Google Workspace</span>
-          <span class="tag">Microsoft Office</span>
-          <span class="tag">Herramientas de diseño</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <p class="skill-label">GESTIÓN</p>
-        <div class="skill-tags">
-          <span class="tag">Cumplimiento de estándares</span>
-          <span class="tag">Liderazgo de equipos</span>
-          <span class="tag">Coordinación de producción</span>
-          <span class="tag">Gestión de proyectos</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer id="contacto">
-  <div class="container">
-    <h2>Hablemos de tu próximo proyecto.</h2>
-    <div class="footer-actions">
-      <a class="button on-dark-btn filled" href="https://mx.linkedin.com/in/luis-eugenio-caballero-nava-1a6022202" target="_blank" rel="noopener">Conectar en LinkedIn</a>
-      <a class="button on-dark-btn" href="https://letrasinsomnes.com/author/luis-eugenio-caballero-nava/" target="_blank" rel="noopener">Leer en Letras Insomnes</a>
-    </div>
-    <div class="footer-bottom">
-      <span>Luis Eugenio Caballero Nava — Guionista, copywriter y narrador</span>
-      <span>FIN.</span>
-    </div>
-  </div>
-</footer>
-
-<script>
-  (function(){
-    var el = document.getElementById('thesis');
-    var text = 'De día escribe para marcas; de noche, para el insomnio.';
-    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if(reduceMotion){
-      el.textContent = text;
-      return;
-    }
-
-    var i = 0;
-    var cursor = document.createElement('span');
-    cursor.className = 'cursor';
-
-    function type(){
-      if(i <= text.length){
-        el.textContent = text.slice(0, i);
-        el.appendChild(cursor);
-        i++;
-        setTimeout(type, 26);
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luis Eugenio Caballero Nava — Guionista &amp; Narrador</title>
+    <meta
+      name="description"
+      content="Portafolio de Luis Eugenio Caballero Nava: guionista, copywriter creativo y narrador de ficción breve, Ciudad de México."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #15120e;
+        --ink-2: #1c1811;
+        --ink-3: #221d15;
+        --paper: #e7e1ce;
+        --paper-2: #dcd4bc;
+        --ribbon: #8b2a22;
+        --ribbon-soft: #a8483e;
+        --brass: #a98f5e;
+        --on-dark: #efe8d8;
+        --on-dark-muted: #96907e;
+        --on-paper: #221d15;
+        --on-paper-muted: #5c5646;
+        --rule-dark: #3a342a;
+        --rule-paper: #c7be9f;
+        --serif: "Newsreader", Georgia, serif;
+        --mono: "Courier Prime", "Courier New", monospace;
       }
-    }
-    type();
-  })();
-</script>
 
-<script>
-  (function(){
-    var tabs = Array.prototype.slice.call(document.querySelectorAll('.shelf [role="tab"]'));
-    var panels = Array.prototype.slice.call(document.querySelectorAll('.shelf [role="tabpanel"]'));
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--ink);
+        color: var(--on-dark);
+        font-family: var(--serif);
+        -webkit-font-smoothing: antialiased;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      a {
+        color: inherit;
+      }
+      .container {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 0 clamp(20px, 5vw, 56px);
+      }
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-weight: 500;
+      }
+      p {
+        margin: 0;
+      }
 
-    function activate(tab){
-      tabs.forEach(function(t){
-        var selected = t === tab;
-        t.setAttribute('aria-selected', selected ? 'true' : 'false');
-        t.tabIndex = selected ? 0 : -1;
-      });
-      panels.forEach(function(p){
-        p.hidden = p.id !== tab.getAttribute('aria-controls');
-      });
-    }
+      a.button {
+        display: inline-block;
+        font-family: var(--mono);
+        font-size: 0.9rem;
+        text-decoration: none;
+        padding: 0.85em 1.4em;
+        border: 1px solid currentColor;
+        transition:
+          background-color 0.15s ease,
+          color 0.15s ease;
+      }
+      .on-dark-btn {
+        color: var(--on-dark);
+      }
+      .on-dark-btn:hover {
+        background: var(--on-dark);
+        color: var(--ink);
+      }
+      .on-dark-btn.filled {
+        background: var(--ribbon);
+        border-color: var(--ribbon);
+        color: var(--on-dark);
+      }
+      .on-dark-btn.filled:hover {
+        background: var(--ribbon-soft);
+      }
 
-    tabs.forEach(function(tab, idx){
-      tab.addEventListener('click', function(){ activate(tab); });
-      tab.addEventListener('keydown', function(e){
-        var newIdx;
-        if(e.key === 'ArrowRight' || e.key === 'ArrowDown'){ newIdx = (idx + 1) % tabs.length; }
-        else if(e.key === 'ArrowLeft' || e.key === 'ArrowUp'){ newIdx = (idx - 1 + tabs.length) % tabs.length; }
-        else if(e.key === 'Home'){ newIdx = 0; }
-        else if(e.key === 'End'){ newIdx = tabs.length - 1; }
-        else { return; }
-        e.preventDefault();
-        activate(tabs[newIdx]);
-        tabs[newIdx].focus();
-      });
-    });
-  })();
-</script>
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--ribbon-soft);
+        outline-offset: 3px;
+      }
 
-</body>
+      /* ---------- HERO ---------- */
+      .hero {
+        position: relative;
+        min-height: 92vh;
+        display: flex;
+        align-items: center;
+        background:
+          repeating-linear-gradient(
+            to bottom,
+            rgba(239, 232, 216, 0.028) 0px,
+            rgba(239, 232, 216, 0.028) 1px,
+            transparent 1px,
+            transparent 34px
+          ),
+          var(--ink);
+        overflow: hidden;
+      }
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse at 20% 20%,
+          rgba(139, 42, 34, 0.1),
+          transparent 55%
+        );
+        pointer-events: none;
+      }
+      .hero-inner {
+        position: relative;
+        padding-top: 64px;
+        padding-bottom: 64px;
+      }
+      .slugline {
+        font-family: var(--mono);
+        color: var(--brass);
+        letter-spacing: 0.06em;
+        font-size: 0.95rem;
+        margin-bottom: 1.6em;
+      }
+      .name {
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: clamp(2.6rem, 8vw, 5.4rem);
+        line-height: 1.02;
+        letter-spacing: -0.01em;
+        color: var(--on-dark);
+      }
+      .name em {
+        font-style: italic;
+        font-weight: 300;
+        color: var(--on-dark-muted);
+      }
+      .role {
+        font-family: var(--mono);
+        font-size: clamp(0.8rem, 1.6vw, 0.98rem);
+        color: var(--on-dark-muted);
+        margin-top: 1.1em;
+      }
+      .thesis {
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(1.25rem, 2.6vw, 1.7rem);
+        max-width: 20ch;
+        margin-top: 0.9em;
+        color: var(--on-dark);
+        min-height: 1.4em;
+      }
+      .cursor {
+        display: inline-block;
+        width: 0.5ch;
+        background: var(--ribbon-soft);
+        margin-left: 2px;
+        animation: blink 1s step-end infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .hero-meta {
+        display: flex;
+        gap: 1.6em;
+        flex-wrap: wrap;
+        margin-top: 2.6em;
+        align-items: center;
+      }
+      .hero-location {
+        font-family: var(--mono);
+        font-size: 0.85rem;
+        color: var(--on-dark-muted);
+      }
+
+      /* ---------- SECTION HEADINGS ---------- */
+      .section-head {
+        font-family: var(--serif);
+        font-weight: 500;
+        font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+        margin-bottom: 0.5em;
+      }
+      .section-intro {
+        max-width: 58ch;
+        font-size: 1.05rem;
+        line-height: 1.6;
+      }
+      .on-paper .section-intro {
+        color: var(--on-paper-muted);
+      }
+      .on-dark-section .section-intro {
+        color: var(--on-dark-muted);
+      }
+
+      /* ---------- TURNO COMERCIAL (paper) ---------- */
+      .turno-comercial {
+        background: var(--paper);
+        color: var(--on-paper);
+        padding: clamp(56px, 9vw, 108px) 0;
+      }
+      .engagements {
+        margin-top: 3em;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 2.6em;
+      }
+      .engagement {
+        border-top: 1px solid var(--rule-paper);
+        padding-top: 1.1em;
+      }
+      .engagement .years {
+        font-family: var(--mono);
+        font-size: 0.82rem;
+        color: var(--brass);
+      }
+      .engagement h3 {
+        font-family: var(--serif);
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-top: 0.35em;
+      }
+      .engagement .org {
+        font-family: var(--mono);
+        font-size: 0.85rem;
+        color: var(--on-paper-muted);
+        margin-top: 0.2em;
+      }
+      .engagement p.desc {
+        margin-top: 0.8em;
+        font-size: 0.98rem;
+        line-height: 1.55;
+        color: var(--on-paper);
+        max-width: 42ch;
+      }
+
+      /* ---------- TURNO NOCTURNO (dark) ---------- */
+      .turno-nocturno {
+        background: var(--ink-2);
+        color: var(--on-dark);
+        padding: clamp(56px, 9vw, 108px) 0;
+        border-top: 1px solid var(--ribbon);
+      }
+      .stories {
+        margin-top: 3em;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2px;
+        background: var(--rule-dark);
+      }
+      .story {
+        background: var(--ink-2);
+        padding: 2.2em;
+      }
+      .story .years {
+        font-family: var(--mono);
+        font-size: 0.82rem;
+        color: var(--ribbon-soft);
+      }
+      .story h3 {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: 1.65rem;
+        font-weight: 500;
+        margin-top: 0.3em;
+      }
+      .story p.desc {
+        margin-top: 0.9em;
+        font-size: 1rem;
+        line-height: 1.65;
+        color: var(--on-dark-muted);
+        max-width: 48ch;
+      }
+      .story a.read {
+        display: inline-block;
+        margin-top: 1.3em;
+        font-family: var(--mono);
+        font-size: 0.85rem;
+        text-decoration: underline;
+        text-decoration-color: var(--ribbon);
+        text-underline-offset: 4px;
+        color: var(--on-dark);
+      }
+
+      .reception {
+        margin-top: 3em;
+        display: flex;
+        gap: 1.6em;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .reception img {
+        width: 76px;
+        height: 76px;
+        object-fit: cover;
+        border-radius: 50%;
+        filter: grayscale(0.35) sepia(0.12);
+        border: 1px solid var(--rule-dark);
+      }
+      .reception p {
+        font-size: 0.98rem;
+        color: var(--on-dark-muted);
+        max-width: 46ch;
+        line-height: 1.55;
+      }
+
+      /* ---------- TRAYECTORIA ---------- */
+      .trayectoria {
+        background: var(--paper);
+        color: var(--on-paper);
+        padding: clamp(56px, 9vw, 108px) 0;
+      }
+      .timeline {
+        margin-top: 3em;
+        border-left: 1px solid var(--rule-paper);
+        padding-left: clamp(20px, 4vw, 40px);
+        display: flex;
+        flex-direction: column;
+        gap: 1.9em;
+      }
+      .tl-item {
+        position: relative;
+      }
+      .tl-item::before {
+        content: "";
+        position: absolute;
+        left: calc(-1 * clamp(20px, 4vw, 40px) - 4px);
+        top: 0.45em;
+        width: 7px;
+        height: 7px;
+        background: var(--ribbon);
+        border-radius: 50%;
+      }
+      .tl-item .years {
+        font-family: var(--mono);
+        font-size: 0.82rem;
+        color: var(--brass);
+      }
+      .tl-item h3 {
+        font-family: var(--serif);
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-top: 0.25em;
+      }
+      .tl-item .org {
+        font-family: var(--mono);
+        font-size: 0.82rem;
+        color: var(--on-paper-muted);
+      }
+      .tl-item p.desc {
+        margin-top: 0.5em;
+        font-size: 0.95rem;
+        line-height: 1.55;
+        max-width: 56ch;
+        color: var(--on-paper);
+      }
+
+      /* ========== PROYECTOS: ANAQUEL (MEJORADO) ========== */
+      .proyectos {
+        background: var(--ink);
+        padding: clamp(56px, 9vw, 108px) 0;
+      }
+      .proyectos .section-head,
+      .proyectos .section-intro {
+        color: var(--on-dark);
+      }
+
+      .shelf {
+        margin-top: 3.4em;
+        position: relative;
+      }
+      .shelf-row {
+        display: flex;
+        align-items: flex-end;
+        gap: 6px;
+        padding: 8px 4px 0;
+        perspective: 600px;
+      }
+      .spine {
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        letter-spacing: 0.03em;
+        border: none;
+        cursor: pointer;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+        padding: 1.8em 0.8em;
+        height: clamp(180px, 26vw, 240px);
+        width: auto;
+        min-width: 38px;
+        max-width: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(0) translateZ(0);
+        transition:
+          transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 0.25s ease,
+          filter 0.25s ease;
+        position: relative;
+        box-shadow:
+          -3px 0 6px rgba(0, 0, 0, 0.25) inset,
+          2px 0 4px rgba(255, 255, 255, 0.08) inset,
+          4px 8px 14px rgba(0, 0, 0, 0.35);
+        border-radius: 2px 4px 4px 2px;
+        overflow: hidden;
+      }
+
+      /* Textura sutil para simular lomo de libro */
+      .spine::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          90deg,
+          transparent 0px,
+          rgba(0, 0, 0, 0.06) 1px,
+          transparent 2px,
+          transparent 4px
+        );
+        mix-blend-mode: multiply;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      /* Brillo superior sutil */
+      .spine::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.12),
+          transparent
+        );
+        pointer-events: none;
+        z-index: 2;
+      }
+
+      .spine:hover {
+        transform: translateY(-12px) translateZ(8px);
+        box-shadow:
+          -4px 0 8px rgba(0, 0, 0, 0.35) inset,
+          3px 0 6px rgba(255, 255, 255, 0.12) inset,
+          8px 16px 28px rgba(0, 0, 0, 0.45);
+        filter: brightness(1.08);
+        z-index: 10;
+      }
+
+      .spine[aria-selected="true"] {
+        transform: translateY(-24px) translateZ(12px);
+        box-shadow:
+          -5px 0 10px rgba(0, 0, 0, 0.45) inset,
+          4px 0 8px rgba(255, 255, 255, 0.15) inset,
+          12px 20px 35px rgba(0, 0, 0, 0.55);
+        z-index: 20;
+        filter: brightness(1.15);
+      }
+
+      .spine:focus-visible {
+        outline: 2px solid var(--on-dark);
+        outline-offset: 4px;
+      }
+
+      /* Colores de lomos con variaciones sutiles */
+      .spine-a {
+        background: linear-gradient(135deg, var(--brass), #8b7348);
+        color: var(--on-paper);
+        flex: 1.15;
+      }
+      .spine-b {
+        background: linear-gradient(135deg, var(--paper-2), #b8aa8a);
+        color: var(--on-paper);
+        flex: 0.95;
+      }
+      .spine-c {
+        background: linear-gradient(135deg, var(--ribbon), #6b2018);
+        color: var(--on-dark);
+        flex: 1.05;
+      }
+      .spine-d {
+        background: linear-gradient(135deg, var(--ink-3), #1c160f);
+        color: var(--on-dark);
+        flex: 0.9;
+        border-right: 2px solid var(--brass);
+      }
+
+      /* Sombra de la estantería */
+      .shelf-ledge {
+        height: 18px;
+        background: linear-gradient(to bottom, #a98f5e, #7c6841);
+        box-shadow:
+          0 4px 8px rgba(0, 0, 0, 0.25),
+          0 12px 22px rgba(0, 0, 0, 0.35),
+          inset 0 2px 4px rgba(255, 255, 255, 0.08);
+        border-radius: 2px;
+        position: relative;
+        z-index: 5;
+      }
+
+      .shelf-ledge::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.15),
+          transparent
+        );
+      }
+
+      .panel {
+        padding-top: 3em;
+        max-width: 62ch;
+        min-height: 10em;
+        animation: fadeIn 0.35s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .panel .meta {
+        font-family: var(--mono);
+        font-size: 0.76rem;
+        color: var(--on-dark-muted);
+      }
+      .panel h3 {
+        font-family: var(--serif);
+        font-size: clamp(1.45rem, 3.2vw, 1.95rem);
+        font-weight: 500;
+        margin-top: 0.45em;
+        color: var(--on-dark);
+      }
+      .panel .desc {
+        margin-top: 0.8em;
+        font-size: 1.02rem;
+        line-height: 1.65;
+        color: var(--on-dark-muted);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .spine,
+        .spine:hover,
+        .spine[aria-selected="true"] {
+          transition: none;
+        }
+        .panel {
+          animation: none;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .spine,
+        .spine:hover,
+        .spine[aria-selected="true"] {
+          transition: none;
+        }
+      }
+
+      .eyebrow {
+        font-family: var(--mono);
+        font-size: 0.85rem;
+        color: var(--brass);
+        letter-spacing: 0.04em;
+        margin-bottom: 0.5em;
+      }
+
+      /* ---------- DOMINIO ---------- */
+      .dominio {
+        background: var(--paper);
+        color: var(--on-paper);
+        padding: clamp(56px, 9vw, 108px) 0;
+      }
+      .skills-grid {
+        margin-top: 3em;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 2.8em;
+      }
+      .skill-label {
+        font-family: var(--mono);
+        font-size: 0.82rem;
+        letter-spacing: 0.04em;
+        color: var(--brass);
+      }
+      .skill-tags {
+        margin-top: 1em;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55em;
+      }
+      .tag {
+        font-family: var(--mono);
+        font-size: 0.82rem;
+        border: 1px solid var(--rule-paper);
+        padding: 0.5em 0.8em;
+        color: var(--on-paper);
+        line-height: 1.2;
+      }
+      .tag:hover {
+        border-color: var(--ribbon);
+        color: var(--ribbon);
+      }
+
+      /* ---------- FOOTER ---------- */
+      footer {
+        background: var(--ink);
+        border-top: 1px solid var(--ribbon);
+        padding: clamp(48px, 8vw, 88px) 0 40px;
+      }
+      footer h2 {
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: clamp(1.8rem, 4vw, 2.7rem);
+        max-width: 14ch;
+      }
+      .footer-actions {
+        margin-top: 1.8em;
+        display: flex;
+        gap: 1em;
+        flex-wrap: wrap;
+      }
+      .footer-bottom {
+        margin-top: 4em;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1em;
+        font-family: var(--mono);
+        font-size: 0.8rem;
+        color: var(--on-dark-muted);
+        border-top: 1px solid var(--rule-dark);
+        padding-top: 1.6em;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        .cursor {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container hero-inner">
+        <p class="slugline">FADE IN:</p>
+        <h1 class="name">Luis Eugenio<br /><em>Caballero Nava</em></h1>
+        <p class="role">
+          Guionista · Copywriter Creativo Sr. · Diseñador Narrativo
+        </p>
+        <p class="thesis" id="thesis"></p>
+        <div class="hero-meta">
+          <a class="button on-dark-btn filled" href="#proyectos"
+            >Ver proyectos</a
+          >
+          <a
+            class="button on-dark-btn"
+            href="https://mx.linkedin.com/in/luis-eugenio-caballero-nava-1a6022202"
+            target="_blank"
+            rel="noopener"
+            >LinkedIn</a
+          >
+        </div>
+        <p class="hero-location" style="margin-top: 2em">
+          Ciudad de México, México
+        </p>
+      </div>
+    </header>
+
+    <section class="turno-comercial on-paper" id="comercial">
+      <div class="container">
+        <h2 class="section-head">Turno comercial</h2>
+        <p class="section-intro">
+          Guiones y narrativas de marca para audiencias masivas: campañas,
+          contenido para redes y materiales de capacitación para compañías
+          grandes.
+        </p>
+        <div class="engagements">
+          <div class="engagement">
+            <p class="years">2025 — actualidad</p>
+            <h3>Copywriter Creativo</h3>
+            <p class="org">Devórame Otra Vez</p>
+            <p class="desc">
+              Conceptualiza campañas y guiones comerciales e institucionales
+              para Nestlé, Elanco y Grupo Presidente, adaptando tono y
+              estructura narrativa a Instagram, TikTok, Facebook y Amazon USA.
+            </p>
+          </div>
+          <div class="engagement">
+            <p class="years">2017 — 2022</p>
+            <h3>Guionista</h3>
+            <p class="org">Analysales</p>
+            <p class="desc">
+              Guiones de comunicación interna y capacitación para Scotiabank,
+              Palacio de Hierro, Office Max, Easy Fit y Bendita Paleta.
+            </p>
+          </div>
+          <div class="engagement">
+            <p class="years">2024</p>
+            <h3>Narrativa interactiva</h3>
+            <p class="org">
+              Certificación en Desarrollo de Videojuegos, Universidad Anáhuac
+            </p>
+            <p class="desc">
+              Una extensión reciente hacia el diseño narrativo para medios
+              interactivos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="turno-nocturno on-dark-section" id="nocturno">
+      <div class="container">
+        <h2 class="section-head">Turno nocturno</h2>
+        <p class="section-intro">
+          Como narrador, escribe ficción breve para Letras Insomnes. Su prosa
+          husmea en la violencia doméstica, el rencor heredado y esa clase de
+          belleza que solo aparece cuando algo se rompe.
+        </p>
+        <div class="stories">
+          <article class="story">
+            <p class="years">2025</p>
+            <h3>Heredar el fuego</h3>
+            <p class="desc">
+              Un nieto hereda las tierras de su abuela, una matriarca tan
+              generosa como cruel, mientras el resto de la familia se devora
+              entre sí por lo que queda. Un relato sobre la herencia como
+              condena.
+            </p>
+            <a
+              class="read"
+              href="https://letrasinsomnes.com/heredar-el-fuego/"
+              target="_blank"
+              rel="noopener"
+              >Leer el cuento</a
+            >
+          </article>
+          <article class="story">
+            <p class="years">2026</p>
+            <h3>La visita mensual</h3>
+            <p class="desc">
+              Un hombre próspero paga un precio que no esperaba por un ritual
+              pedido para proteger su negocio. Un cuento sobre la culpa
+              convertida en costumbre.
+            </p>
+            <a
+              class="read"
+              href="https://letrasinsomnes.com/la-visita-mensual/"
+              target="_blank"
+              rel="noopener"
+              >Leer el cuento</a
+            >
+          </article>
+        </div>
+        <div class="reception">
+          <img
+            src="https://letrasinsomnes.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-15-at-4.16.02-PM.jpeg"
+            alt="Luis Eugenio Caballero Nava"
+            loading="lazy"
+          />
+          <p>
+            Lectores de Letras Insomnes han comparado la crudeza de su narrativa
+            con la de Juan Rulfo. Actualmente prepara su primera antología de
+            cuentos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="trayectoria on-paper" id="trayectoria">
+      <div class="container">
+        <h2 class="section-head">Trayectoria</h2>
+        <p class="section-intro">
+          Quince años entre set, oficina y escritorio nocturno.
+        </p>
+        <div class="timeline">
+          <div class="tl-item">
+            <p class="years">2010</p>
+            <h3>Asistente de investigación histórica y fotográfica</h3>
+            <p class="org">Casa de la Cultura de San Luis Potosí</p>
+            <p class="desc">
+              Investigación para la exposición y el libro sobre el fotógrafo
+              Manuel Ramos.
+            </p>
+          </div>
+          <div class="tl-item">
+            <p class="years">2012</p>
+            <h3>Coguionista, serie «Hotel Garage»</h3>
+            <p class="org">Lucía Films</p>
+            <p class="desc">
+              Guiones en coautoría con Michael Rowe, ganador de la Cámara de Oro
+              en Cannes 2010.
+            </p>
+          </div>
+          <div class="tl-item">
+            <p class="years">2015</p>
+            <h3>Guionista de dos largometrajes</h3>
+            <p class="org">BluePrint, bajo la dirección de Julio Geiger</p>
+          </div>
+          <div class="tl-item">
+            <p class="years">2015 — 2016</p>
+            <h3>Servicio social</h3>
+            <p class="org">Canal Once</p>
+            <p class="desc">
+              Investigación cultural y guion de introducciones para el programa
+              Cine del Once.
+            </p>
+          </div>
+          <div class="tl-item">
+            <p class="years">2016</p>
+            <h3>Guion del cortometraje «Colector 13»</h3>
+            <p class="org">Dir. Fabián Quintanar</p>
+            <p class="desc">
+              Ganador del Premio del Público en la categoría Reto Doctubre.
+            </p>
+          </div>
+          <div class="tl-item">
+            <p class="years">2017 — 2022</p>
+            <h3>Guionista</h3>
+            <p class="org">Analysales</p>
+          </div>
+          <div class="tl-item">
+            <p class="years">2022 — 2025</p>
+            <h3>Compliance Officer / Team Leader</h3>
+            <p class="org">The Mendoza Law Firm</p>
+            <p class="desc">Redacción técnica y normativa.</p>
+          </div>
+          <div class="tl-item">
+            <p class="years">2025 — hoy</p>
+            <h3>Copywriter Creativo</h3>
+            <p class="org">Devórame Otra Vez</p>
+          </div>
+          <div class="tl-item">
+            <p class="years">2025 — hoy</p>
+            <h3>Narrador</h3>
+            <p class="org">Letras Insomnes</p>
+            <p class="desc">Prepara su primera antología de cuentos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proyectos" id="proyectos">
+      <div class="container">
+        <h2 class="section-head">Proyectos destacados</h2>
+        <p class="section-intro">
+          Cuatro historias, cuatro formatos. Saca una del anaquel.
+        </p>
+
+        <div class="shelf">
+          <div
+            class="shelf-row"
+            role="tablist"
+            aria-label="Proyectos destacados"
+          >
+            <button
+              type="button"
+              class="spine spine-a"
+              role="tab"
+              id="tab-1"
+              aria-controls="panel-1"
+              aria-selected="true"
+            >
+              Hotel Garage
+            </button>
+            <button
+              type="button"
+              class="spine spine-b"
+              role="tab"
+              id="tab-2"
+              aria-controls="panel-2"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              Colector 13
+            </button>
+            <button
+              type="button"
+              class="spine spine-c"
+              role="tab"
+              id="tab-3"
+              aria-controls="panel-3"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              Heredar el fuego
+            </button>
+            <button
+              type="button"
+              class="spine spine-d"
+              role="tab"
+              id="tab-4"
+              aria-controls="panel-4"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              La visita mensual
+            </button>
+          </div>
+          <div class="shelf-ledge" aria-hidden="true"></div>
+
+          <div
+            class="panel"
+            id="panel-1"
+            role="tabpanel"
+            aria-labelledby="tab-1"
+          >
+            <p class="meta">2012 · Serie de TV · Coguion</p>
+            <h3>Hotel Garage</h3>
+            <p class="desc">
+              Escrito junto a Michael Rowe, ganador de la Cámara de Oro en
+              Cannes 2010, para Lucía Films.
+            </p>
+          </div>
+          <div
+            class="panel"
+            id="panel-2"
+            role="tabpanel"
+            aria-labelledby="tab-2"
+            hidden
+          >
+            <p class="meta">2016 · Cortometraje · Guion</p>
+            <h3>Colector 13</h3>
+            <p class="desc">
+              Dirigido por Fabián Quintanar. Ganador del Premio del Público,
+              Reto Doctubre.
+            </p>
+          </div>
+          <div
+            class="panel"
+            id="panel-3"
+            role="tabpanel"
+            aria-labelledby="tab-3"
+            hidden
+          >
+            <p class="meta">2025 · Cuento · Letras Insomnes</p>
+            <h3>Heredar el fuego</h3>
+            <p class="desc">
+              Una familia, una hacienda y una herencia que nadie quiere cargar
+              sola.
+            </p>
+          </div>
+          <div
+            class="panel"
+            id="panel-4"
+            role="tabpanel"
+            aria-labelledby="tab-4"
+            hidden
+          >
+            <p class="meta">2026 · Cuento · Letras Insomnes</p>
+            <h3>La visita mensual</h3>
+            <p class="desc">
+              Un ritual, un cliente y una culpa que se aprende a administrar.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dominio on-paper" id="dominio">
+      <div class="container">
+        <p class="eyebrow">Habilidades</p>
+        <h2 class="section-head">Lo que domino</h2>
+        <p class="section-intro">
+          Herramientas y disciplinas detrás de cada guion.
+        </p>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <p class="skill-label">CREATIVIDAD</p>
+            <div class="skill-tags">
+              <span class="tag">Copywriting publicitario</span>
+              <span class="tag">Guionismo comercial</span>
+              <span class="tag">Facilitación de brainstorming</span>
+              <span class="tag">Conceptualización de campañas</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <p class="skill-label">ESCRITURA</p>
+            <div class="skill-tags">
+              <span class="tag">Ficción breve</span>
+              <span class="tag">Redacción técnica</span>
+              <span class="tag">Comunicación corporativa</span>
+              <span class="tag">Adaptación de tono de voz</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <p class="skill-label">HERRAMIENTAS</p>
+            <div class="skill-tags">
+              <span class="tag">Celtx</span>
+              <span class="tag">Google Workspace</span>
+              <span class="tag">Microsoft Office</span>
+              <span class="tag">Herramientas de diseño</span>
+            </div>
+          </div>
+          <div class="skill-group">
+            <p class="skill-label">GESTIÓN</p>
+            <div class="skill-tags">
+              <span class="tag">Cumplimiento de estándares</span>
+              <span class="tag">Liderazgo de equipos</span>
+              <span class="tag">Coordinación de producción</span>
+              <span class="tag">Gestión de proyectos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contacto">
+      <div class="container">
+        <h2>Hablemos de tu próximo proyecto.</h2>
+        <div class="footer-actions">
+          <a
+            class="button on-dark-btn filled"
+            href="https://mx.linkedin.com/in/luis-eugenio-caballero-nava-1a6022202"
+            target="_blank"
+            rel="noopener"
+            >Conectar en LinkedIn</a
+          >
+          <a
+            class="button on-dark-btn"
+            href="https://letrasinsomnes.com/author/luis-eugenio-caballero-nava/"
+            target="_blank"
+            rel="noopener"
+            >Leer en Letras Insomnes</a
+          >
+        </div>
+        <div class="footer-bottom">
+          <span
+            >Luis Eugenio Caballero Nava — Guionista, copywriter y
+            narrador</span
+          >
+          <span>FIN.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var el = document.getElementById("thesis");
+        var text = "De día escribe para marcas; de noche, para el insomnio.";
+        var reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        if (reduceMotion) {
+          el.textContent = text;
+          return;
+        }
+
+        var i = 0;
+        var cursor = document.createElement("span");
+        cursor.className = "cursor";
+
+        function type() {
+          if (i <= text.length) {
+            el.textContent = text.slice(0, i);
+            el.appendChild(cursor);
+            i++;
+            setTimeout(type, 26);
+          }
+        }
+        type();
+      })();
+    </script>
+
+    <script>
+      (function () {
+        var tabs = Array.prototype.slice.call(
+          document.querySelectorAll('.shelf [role="tab"]'),
+        );
+        var panels = Array.prototype.slice.call(
+          document.querySelectorAll('.shelf [role="tabpanel"]'),
+        );
+
+        function activate(tab) {
+          tabs.forEach(function (t) {
+            var selected = t === tab;
+            t.setAttribute("aria-selected", selected ? "true" : "false");
+            t.tabIndex = selected ? 0 : -1;
+          });
+          panels.forEach(function (p) {
+            p.hidden = p.id !== tab.getAttribute("aria-controls");
+          });
+        }
+
+        tabs.forEach(function (tab, idx) {
+          tab.addEventListener("click", function () {
+            activate(tab);
+          });
+          tab.addEventListener("keydown", function (e) {
+            var newIdx;
+            if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+              newIdx = (idx + 1) % tabs.length;
+            } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+              newIdx = (idx - 1 + tabs.length) % tabs.length;
+            } else if (e.key === "Home") {
+              newIdx = 0;
+            } else if (e.key === "End") {
+              newIdx = tabs.length - 1;
+            } else {
+              return;
+            }
+            e.preventDefault();
+            activate(tabs[newIdx]);
+            tabs[newIdx].focus();
+          });
+        });
+      })();
+    </script>
+  </body>
 </html>
